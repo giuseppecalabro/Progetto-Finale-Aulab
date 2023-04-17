@@ -1,0 +1,162 @@
+/* GENERAL CARD SETTINGS + CARD ARTS---------------------- */
+  .bgArticle{
+    background-image: url("../../public/img/bgImageArts.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows:200px 150px 80px;
+    grid-template-areas: "image" "text" "stats";
+    border-radius: 18px;
+    background: #1d1d1d;
+    color: var(--colorWhiteSmoke);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    text-align: justify;
+    cursor: pointer;
+    margin:30px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+
+  }
+.rgb, 
+rgb::after{
+    transition: 10s;
+}
+    .rgb:hover::after {
+    content:"";
+    background: linear-gradient(45deg,
+    #f4eacc 0%,
+    #f1e5bf 10%, 
+    #eee0b1 20%, 
+    #ebdaa4 30%,  
+    #e8d596 40%,
+    #e5cf89 50%, 
+    #e2ca7c 60%, 
+    #dfc56e 70%, 
+    #ddbf61 80%, 
+    #daba53 90%, 
+    #d4af37 100%  )
+    repeat 0% 0% / 300% 100%;
+    position: absolute;
+    inset: -3px;
+    border-radius: 16px;
+    filter: blur(8px);
+    transform: translateZ(-1px); /*or z-index */
+    animation: rgb 6s linear infinite;
+
+  }
+  @keyframes rgb {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  .card-image {
+    grid-area: image;
+    background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+  }
+  
+  .card-text {
+    grid-area: text;
+    padding: 25px;
+    transform: translateZ(30px);
+  }
+  .card-text .sellDate {
+    color: var(--colorLightGrey) !important;
+    font-size:13px;
+  }
+  .card-text p {
+    color: grey;
+    font-size:14px;
+    font-weight: 300;
+  }
+  .card-text h2 {
+    margin-top:0px;
+    font-size:28px;
+  }
+/* END GENERAL CARD SETTINGS + CARD ARTS------------------- */
+
+/* PREVIEW / SWIPER CARD SETTINGS-------------------------- */
+.cardPreview {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 200px 150px 60px;
+  grid-template-areas: "image" "text" "stats";
+  border-radius: 18px;
+  background: #1d1d1d;
+  color: var(--colorWhiteSmoke);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  text-align: justify;
+  cursor: pointer;
+  margin:30px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+
+}
+.rgbPreview, 
+rgbPreview::after{
+  transition: 10s;
+}
+  .rgbPreview:hover::after {
+  content:"";
+  background: linear-gradient(45deg,
+  #f4eacc 0%,
+  #f1e5bf 10%, 
+  #eee0b1 20%, 
+  #ebdaa4 30%,  
+  #e8d596 40%,
+  #e5cf89 50%, 
+  #e2ca7c 60%, 
+  #dfc56e 70%, 
+  #ddbf61 80%, 
+  #daba53 90%, 
+  #d4af37 100%  )
+  repeat 0% 0% / 300% 100%;
+  position: absolute;
+  inset: -3px;
+  border-radius: 16px;
+  filter: blur(8px);
+  transform: translateZ(-1px); /*or z-index */
+  animation: rgb 6s linear infinite;
+
+}
+@keyframes rgb {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.card-imagePreview {
+  grid-area: image;
+  background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+
+.card-textPreview {
+  grid-area: text;
+  margin: 25px;
+  transform: translateZ(30px);
+}
+.card-textPreview .sellDatePreview {
+  color: var(--colorLightGrey) !important;
+  font-size:13px;
+}
+.card-textPreview p {
+  color: grey;
+  font-size:14px;
+  font-weight: 300;
+}
+.card-textPreview h2 {
+  margin-top:0px;
+  font-size:28px;
+}
+/* END PREVIEW / SWIPER CARD SETTINGS---------------------- */
+

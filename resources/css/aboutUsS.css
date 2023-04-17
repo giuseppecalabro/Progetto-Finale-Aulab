@@ -1,0 +1,779 @@
+/* 
+  *, *::before, *::after {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      border: 0;
+  }
+ */
+
+ .oldBg{
+    background-color: #aaf;
+ }
+
+/* Slider style */
+  .cd-slider {
+    
+      position: relative;
+      /* width: 100%;
+      height: 100vh; */
+      overflow: hidden;
+  }
+  .cd-slider.ie9 .navArrowsAU div span {
+      display: none;
+  }
+  .cd-slider ul li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      visibility: hidden;
+      transition: visibility 0s .6s;
+  }
+  .cd-slider ul li::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 100%;
+      width: 135vh;
+      height: 135vh;
+      border: solid rgba(0,0,0,0.2);
+      border-width: 0;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      transition: border-width .4s .6s;
+  }
+  .contentAU {
+      /* position: absolute;
+      top: 0;
+      left: 0; */
+      /* width: 100%; */
+      /* height: 100%;
+      background-size: cover; */
+
+      
+      /* background-position: 50% 100%;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      mix-blend-mode: lighten;
+      opacity: 0;
+      transform: scale(1.2);
+      transition: opacity .4s .6s, transform .4s .6s; */
+  }
+
+  /* current slide
+  ---------------------------------*/
+  .cd-slider li.current_slide {
+      visibility: visible;
+  }
+  .cd-slider li.current_slide::before {
+      border-width: 16rem;
+  }
+  .cd-slider li.current_slide .contentAU {
+      opacity: 1;
+      transform: scale(1);
+  }
+  /* nav
+  ---------------------------------*/
+  .navArrowsAU div {
+      position: absolute;
+      top: 50%;
+      left: 4%;
+      width: 5rem;
+      height: 5rem;
+      margin-top: -2.5rem;
+      list-style: none;
+  }
+  .navArrowsAU div:last-of-type {
+      left: auto;
+      right: 4%;
+  }
+  .prev{
+    position: relative;
+    z-index: 100;
+    right: 50px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 100%;
+    transition: box-shadow .3s;
+  } 
+  .next {
+      position: relative;
+      z-index: 100;
+      left: 50px;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 100%;
+      transition: box-shadow .3s;
+  }
+  .prev::before, .prev::after, .next::before, .next::after {
+      content: '';
+      position: absolute;
+      left: 43%;
+      background: #fff;
+      width: .4rem;
+      min-width: 3px;
+      border-radius: 3px;
+      height: 34%;
+  }
+  .prev::before {
+      transform: rotate(45deg);
+      top: 24%;
+  }
+  .prev::after {
+      transform: rotate(-45deg);
+      bottom: 24%;
+  }
+  .next::before, .next::after {
+      left: auto;
+      right: 43%;
+  }
+  .next::before {
+      transform: rotate(-45deg);
+      top: 24%;
+  }
+  .next::after {
+      transform: rotate(45deg);
+      bottom: 24%;
+  }
+  .prev:hover, .next:hover {
+      box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.15);
+  }
+  .navArrowsAU > div > span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 100%;
+      z-index: 5;
+      pointer-events: none;
+      will-change: width, height;
+      transform: translate(-50%, -50%);
+      transition: width .6s, height .6s;
+  }
+
+  .imgBgAU{
+    background-image: linear-gradient(rgba(51, 51, 51, 0.400), rgba(51, 51, 51, 0.400)), url("../../public/img/domenico.jpg");
+    /* background-image: url("../../public/img/domenico.jpg"); */
+    min-width: 100%;
+    height: 35vh;
+    background-size: cover !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .swiperBg2 {
+    background: linear-gradient(-45deg, #eee0b1, #ebdaa4, #e8d596, #e5cf89);
+    background-size: 400% 400%;
+    animation: gradientBg2 15s ease infinite;
+}
+
+@keyframes gradientBg2 {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+/* RPG STYLE -------------------------------------------------  */
+
+/* INITIAL CUSTOM PIXELATED STUFF------------------------------ */
+/* game div without background image*/
+.rpgui-container
+{
+	/* position style and default z */
+	position: static;
+	z-index: 2;
+
+	overflow: show;
+}
+.rpgui-pixelated {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: pixelated; }
+
+/* END INITIAL CUSTOM PIXELATED STUFF------------------------------ */
+.rpgui-container.framed
+{
+	/* border */
+	border-style: solid;
+	border-image-source: url("../../public/img/RPG/border-image.png");
+	border-image-repeat: repeat;
+	border-image-slice: 6 6 6 6;
+	border-image-width: 18px;
+	border-width: 15px;
+	padding: 12px;
+
+	/* internal border */
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+	/* background */
+	background: url("../../public/img/RPG/background-image.png") repeat repeat;
+	background-clip: padding-box;
+	background-origin: padding-box;
+	background-position: center;
+}
+/* game div with golden background image*/
+.rpgui-container.framed-golden
+{
+	/* border */
+	border-style: solid;
+	border-image-source: url("../../public/img/RPG/border-image-golden.png");
+	border-image-repeat: repeat;
+	border-image-slice: 4 4 4 4;
+	border-image-width: 18px;
+	border-width: 15px;
+	padding: 12px;
+
+	/* internal border */
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+	/* background */
+	background: url("../../public/img/RPG/background-image-golden.png") repeat repeat;
+	background-clip: padding-box;
+	background-origin: padding-box;
+	background-position: center;
+}
+/* game div with golden2 background image*/
+.rpgui-container.framed-golden-2
+{
+	/* border */
+	border-style: solid;
+	border-image-source: url("../../public/img/RPG/border-image-golden2.png");
+	border-image-repeat: repeat;
+	border-image-slice: 8 8 8 8;
+	border-image-width: 18px;
+	border-width: 15px;
+	padding: 12px;
+
+	/* internal border */
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+	/* background */
+	background: url("../../public/img/RPG/background-image-golden2.png") repeat repeat;
+	background-clip: padding-box;
+	background-origin: padding-box;
+	background-position: center;
+}
+
+.rpgui-container.framed-grey
+{
+	position: relative;
+
+	/* border */
+	border-style: solid;
+	border-image-source: url("../../public/img/RPG/border-image-grey.png");
+	border-image-repeat: repeat;
+	border-image-slice: 3 3 3 3;
+	border-image-width: 7px;
+	border-width: 7px;
+	padding: 12px;
+
+	/* internal border */
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+	/* background */
+	background: url("../../public/img/RPG/background-image-grey.png") repeat repeat;
+	background-clip: padding-box;
+	background-origin: padding-box;
+	background-position: center;
+}
+
+/* default gui header */
+.rpgui-content h1
+{
+	/* color and border */
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 7px;
+	color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-size: 2.8em;
+
+	/* center text */
+	text-align: center;
+
+	/* padding */
+	padding: 0 0 0 0;
+	margin: 7px 7px 17px 7px;
+}
+/* default gui header2 */
+.rpgui-content h2
+{
+	/* color and border */
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+	color: rgb(228, 228, 0);
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-size: 2.0em;
+
+
+	/* center text */
+	text-align: center;
+
+	/* padding */
+	padding: 0 0 0 0;
+	margin: 7px 7px 17px 7px;
+}
+
+/* default gui header3 */
+.rpgui-content h3
+{
+	/* color and border */
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+	color: white;
+	font-weight: 1;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-size: 1.15em;
+    text-decoration: underline;
+
+	/* center text */
+	text-align: center;
+
+	/* padding */
+	padding: 0 0 0 0;
+	margin: 7px 7px 17px 7px;
+}
+
+/* default gui header4 */
+.rpgui-content h4
+{
+	/* color and border */
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+	color: white;
+	font-weight: 1;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-size: 1.0em;
+    text-decoration: underline;
+
+	/* center text */
+	text-align: center;
+
+	/* padding */
+	padding: 0 0 0 0;
+	margin: 7px 7px 17px 7px;
+}
+
+/* default p */
+.rpgui-content p
+{
+	/* color and border */
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+	color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	font-size: 1.0em;
+	line-height: 11px;
+}
+
+/* default span */
+.rpgui-content span
+{
+	/* color and border */
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+	color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	font-size: 1.0em;
+	line-height: 22px;
+}
+
+/* default gui link */
+.rpgui-content a
+{
+	/* color and border */
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+	color: yellow;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	font-size: 1.0em;
+	line-height: 22px;
+	text-decoration: none;
+}
+/* default gui link */
+.rpgui-content a:hover
+{
+	text-decoration: underline;
+}
+
+/* default gui label */
+.rpgui-content label
+{
+	/* color and border */
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+	color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	font-size: 1.0em;
+	line-height: 20px;
+	display: inline;
+}
+
+/* default gui label */
+.rpgui-content li
+{
+	/* color and border */
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+	margin-left:20px;
+	color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	font-size: 1.0em;
+	line-height: 22px;
+}
+
+
+/**
+* input styling
+*/
+
+/* input/textarea input */
+.rpgui-content input,
+.rpgui-content textarea
+{
+    /* set size and colors */
+    -webkit-box-sizing : border-box;
+    -moz-box-sizing : border-box;
+    box-sizing : border-box;
+	color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	font-size: 0.9em;
+	line-height: 32px;
+	background: #4e4a4e;
+	max-width: 100%;
+	width: 100%;
+	padding-left:10px;
+
+	/* for ie */
+	min-height: 30px;
+
+	/* enable text selecting */
+	-webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+	-webkit-tap-highlight-color: rgba(0,0,0,0.5);
+
+}
+
+/* textarea extra rules */
+.rpgui-content textarea
+{
+    line-height: 22px;
+    padding-top: 7px;
+    height: 80px;
+    resize: none;
+}
+
+/* selection highlight */
+.rpgui-content input::selection,
+.rpgui-content textarea::selection {
+	background: rgba(0,0,0,0.5);
+}
+.rpgui-content input::-moz-selection,
+.rpgui-content textarea::-moz-selection {
+    background: rgba(0,0,0,0.5);
+}
+
+/**
+* style for checkboxes
+*/
+
+/* basic checkbox */
+
+.rpgui-content input[type=checkbox].rpgui-checkbox
+{
+    display: none;
+}
+
+.rpgui-content input[type=checkbox].rpgui-checkbox + label
+{
+    background: url('../../public/img/RPG/checkbox-off.png') no-repeat;
+	line-height: 24px;
+    display: inline-block;
+    background-size: auto 100%;
+    padding-left: 34px;
+    height: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.rpgui-content input[type=checkbox].rpgui-checkbox:checked + label
+{
+    background: url('../../public/img/RPG/checkbox-on.png') no-repeat;
+	line-height: 24px;
+    display: inline-block;
+    background-size: auto 100%;
+    padding-left: 34px;
+    height: 24px;
+}
+
+/* golden checkbox */
+
+.rpgui-content input[type=checkbox].rpgui-checkbox.golden + label
+{
+    background: url('../../public/img/RPG/checkbox-golden-off.png') no-repeat;
+    background-size: auto 100%;
+}
+
+.rpgui-content input[type=checkbox].rpgui-checkbox.golden:checked + label
+{
+    background: url('../../public/img/RPG/checkbox-golden-on.png') no-repeat;
+    background-size: auto 100%;
+}
+
+/**
+* style for radioes
+*/
+
+/* radio box */
+
+.rpgui-content input[type=radio].rpgui-radio
+{
+    display: none;
+}
+
+.rpgui-content input[type=radio].rpgui-radio + label
+{
+    background: url('../../public/img/RPG/radio-off.png') no-repeat;
+	line-height: 24px;
+    display: inline-block;
+    background-size: auto 100%;
+    padding-left: 34px;
+    height: 24px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.rpgui-content input[type=radio].rpgui-radio:checked + label
+{
+    background: url('../../public/img/RPG/radio-on.png') no-repeat;
+	line-height: 24px;
+    display: inline-block;
+    background-size: auto 100%;
+    padding-left: 34px;
+    height: 24px;
+}
+
+/* golden radio */
+
+.rpgui-content .rpgui-radio.golden + label
+{
+    background: url('../../public/img/RPG/radio-golden-off.png') no-repeat !important;
+    background-size: auto 100% !important;
+}
+
+.rpgui-content .rpgui-radio.golden:checked + label
+{
+    background: url('../../public/img/RPG/radio-golden-on.png') no-repeat !important;
+    background-size: auto 100% !important;
+}
+
+/**
+* Customized dropdown with rpgui design.
+*/
+
+/* dropdown box implemented with list (see rpgui-dropdown.js for details) */
+/* note! this class rule affect both the dropdown header and the list elements! */
+.rpgui-dropdown-imp,
+.rpgui-dropdown
+{
+	/* font */
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    color: white;
+
+	/* default size */
+	min-height: 40px;
+	margin-top: 0px;
+
+	/* border */
+	border-style: solid;
+	border-width: 7px 7px 7px 7px;
+	-moz-border-image: url("../../public/img/RPG/select-border-image.png") 10% repeat repeat;
+	-webkit-border-image: url("../../public/img/RPG/select-border-image.png") 10% repeat repeat;
+	-o-border-image: url("../../public/img/RPG/select-border-image.png") 10% repeat repeat;
+	border-image: url("../../public/img/RPG/select-border-image.png") 10% repeat repeat;
+
+	/* background */
+	background: url("../../public/img/RPG/select-background-image.png") repeat repeat;
+	background-clip: padding-box;
+	background-origin: padding-box;
+	background-position: center;
+}
+
+/*
+* progress bar styling
+*/
+
+/* progress bar container */
+.rpgui-progress
+{
+    height: 42px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+/* progress bar left edge */
+.rpgui-progress-left-edge
+{
+    position: absolute;
+    height: 42px;
+    width: 40px;
+    left: 0px;
+    background-image: url('../../public/img/RPG/progress-bar-left.png');
+    background-size: 100% 100%;
+}
+
+/* progress bar right edge */
+.rpgui-progress-right-edge
+{
+    position: absolute;
+    height: 42px;
+    width: 40px;
+    right: 0px;
+    background-image: url('../../public/img/RPG/progress-bar-right.png');
+    background-size: 100% 100%;
+}
+
+/* progress bar background track */
+.rpgui-progress-track
+{
+    position: absolute;
+    height: 42px;
+    left: 40px;
+    right: 40px;
+    background-image: url('../../public/img/RPG/progress-bar-track.png');
+    background-repeat: repeat-x;
+    background-size: 36px 100%;
+}
+
+
+/* progress bar - the fill itself */
+.rpgui-progress-fill
+{
+    position: absolute;
+    top: 9px;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    background-image: url('../../public/img/RPG/progress.png');
+    background-repeat: repeat-x;
+    background-size: 36px 100%;
+}
+
+/* progress bar - blue color */
+.rpgui-progress-fill.blue
+{
+    background-image: url('../../public/img/RPG/progress-blue.png');
+}
+
+/* progress bar - green color */
+.rpgui-progress-fill.green
+{
+    background-image: url('../../public/img/RPG/progress-green.png');
+}
+
+/* progress bar - red color */
+.rpgui-progress-fill.red
+{
+    background-image: url('../../public/img/RPG/progress-red.png');
+}
+
+
+/* dropdown options list */
+ul.rpgui-dropdown-imp
+{
+	padding: 0 0 0 0 !important;
+	z-index: 100;
+}
+
+/* note! this affect only the dropdown header */
+/* shows the currently selected value from select element */
+.rpgui-content .rpgui-dropdown-imp-header
+{
+	color: white !important;
+	min-height: 22px !important;
+	padding: 5px 10px 0 10px !important;
+	margin: 0 0 0 0 !important;
+	position: relative !important;
+}
+
+/* dropdown options */
+.rpgui-dropdown-imp li
+{
+	/* font */
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    color: white;
+	height: 16px;
+
+	/* remove the dot */
+	list-style-type: none;
+
+	/* padding */
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 6px;
+
+	/* background */
+	background: url("../../public/img/RPG/select-background-image.png") repeat repeat;
+	background-clip: padding-box;
+	background-origin: padding-box;
+	background-position: center;
+}
+
+/* dropdown options hover */
+.rpgui-dropdown-imp li:hover
+{
+	color: yellow;
+}
+
+/* dropdown hover */
+.rpgui-dropdown-imp:hover
+{
+	color: yellow;
+}
+/* END RPG STYLE -------------------------------------------------  */
+
+
+/* SPECIAL SIGNATURES-------------------------------------- */
+
+/* END SPECIAL SIGNATURES-------------------------------------- */

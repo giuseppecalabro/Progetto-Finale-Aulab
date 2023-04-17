@@ -1,0 +1,163 @@
+/* MEDIA QUERY 576px (MOBILE) */
+@media screen and (max-width:576px) {
+
+  /* PER TOGLIERE LO SNAP A TUTTE LE PAGINE */
+  .custom-main-container{
+    scroll-snap-type:initial;
+  }
+
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .swiper-welcome {
+    height: 600px;
+  }
+
+  .d1,
+  .d2,
+  .d3,
+  .d4 {
+    background-size: 700px 600px;
+  }
+
+  .presto {
+    font-size: 70px;
+    margin-right: 50px;
+  }
+
+  .mqHeader {
+    font-size: 25px !important;
+  }
+
+  .mqWrapperHeader {
+    margin-top: 18rem;
+  }
+
+  .posButtonHeader {
+    margin-top: 0rem;
+  }
+
+  /* titolo pagine */
+  .formatTitlePages{
+    font-size: 38px;
+    margin-top: 100px !important;
+  }
+  /* Swiper Welcome */
+  .swiper-button-next-custom-welcome {
+    height: 130px;
+    width: 130px;
+    right: -45px;
+  }
+
+  .swiper-button-prev-custom-welcome {
+    height: 130px;
+    width: 130px;
+    left: -45px;
+  }  
+
+  /* Swiper home page (categorie) */
+  .popUpNameOutwear{
+    top: 93%;
+    right: 5%;
+    font-size: 6rem;
+  }
+  .popUpNameAccessories{
+    top: 90%;
+    right: 8%;
+    font-size: 4.5rem;
+  }
+  .popUpNameClothing{
+    top: 85%;
+    right: 6%;
+    font-size: 3.5rem;
+  }
+  .popUpNameFootwear{
+    top: 66%;
+    right: 7%;
+    font-size: 5rem;
+  }
+
+  .imgClothing{
+    cursor: pointer;
+    height: 100% !important;
+    width: 100% !important;
+    left: 0%;
+  }
+
+  .imgFootwear{
+    cursor: pointer;
+    height: 110% !important;
+    width: 110% !important;
+    position: relative;
+    left: 0%;
+  }
+
+  .imgAccessories{
+    cursor: pointer;
+    height: 100% !important;
+    width: 100% !important;
+    left: 0%;
+
+  }
+
+
+  /* RESET PASSWORD */
+  .formResetPassword{
+    width: 93% !important;
+  }
+  /* Modale tasto lavora con noi */
+
+    /* pagina richiesta mail recupero password */
+    .forgotPassForm{
+      width: 95% !important;
+    }
+    .imageForgot{
+      background-position: center;
+  }
+  .imageReset{
+    background-position: center;
+    
+  }
+  
+    
+  .modal-content{
+    width: 100% ;
+  }
+  .eyePasswordRegLog{
+    position: absolute;
+    right: 1000% ;
+  }
+
+
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  .imgCustomLogin {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 0px;
+  }
+
+}
+
+
+/* PER DESKTOP*/
+@media only screen and (min-width: 992px) {
+  .loginBox i {
+    width: 180%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .imgCustomLogin {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 0px;
+  }
+}

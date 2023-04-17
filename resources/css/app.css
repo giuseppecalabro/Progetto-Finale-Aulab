@@ -1,0 +1,19 @@
+@import "bootstrap/dist/css/bootstrap";
+@import "style";
+@import "footerst";
+@import "navbarst";
+@import "swiperst";
+@import "articleCard";
+@import "category-swiper";
+@import "aboutUsS";
+@import "mediaquery";
+@import "indexRevisor";
+@import "forgotPassword";
+@import "fadeUpCategories";
+
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+/* bandierine frifri */
+@import "/node_modules/flag-icon-css/css/flag-icons.css";
+
+

@@ -1,0 +1,33 @@
+:root{
+    --bs-accordion-btn-icon: white;
+}
+.accordion-button{
+    background-color: var(--colorBlack);
+    color: var(--colorLightGrey);
+}
+.accordion-button:not(.collapsed){
+    background-color: var(--colorGold);
+    color: var(--colorBlack);
+    outline: none;
+    box-shadow: none;
+}
+.accordion{
+    --bs-accordion-bg: none;
+}
+.accordion-button::after{
+    color: aqua;
+
+}
+.collapsed{
+    outline: none;
+    box-shadow: none;
+}
+.accordion-body{
+    background-color: var(--colorWhiteSmoke);
+    border-left: 1px solid var(--colorBlack);
+    border-bottom: 1px solid var(--colorBlack);
+    border-right: 1px solid var(--colorBlack);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
